@@ -1,0 +1,134 @@
+/* // Google font */
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps');
+
+
+
+/* ===== grid Styles =====  */
+
+body {
+  line-height: 1.6;
+  display: grid;
+  grid-template-rows: 10em 50vh auto 10em;
+  grid-template-columns: 1fr 5fr 2fr 1fr;
+  grid-template-areas:
+    "header header header header"
+    /* 1st row */
+    "hero hero hero hero"
+    /* 2nd row */
+    ". main sidebar ."
+    /* 3rd row */
+    "footer footer footer footer";
+  /* 4th row */
+
+  grid-column-gap: 1.5rem;
+}
+
+/* place items in the grid */
+header {
+  grid-area: header;
+}
+
+.hero {
+  grid-area: hero;
+
+  background-image: url('https://source.unsplash.com/1600x900/?nature,water');  
+  /* background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/gridarea-hero-bg.jpg); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-family: Six Caps;
+  text-transform: uppercase;
+  letter-spacing: 2rem;
+  margin: 0;
+}
+
+.hero-subtitle {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: sidebar;
+
+  background: #e8e8e8;
+  padding: 2rem
+}
+
+footer {
+  grid-area: footer;
+}
+
+header,
+footer {
+  background: black;
+  color: yellow;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title,
+.footer-title {
+  font: 2.875rem;
+  font-family: Six Caps;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+/* card styles */
+
+.card {
+  display: grid;
+  /* option 1 */
+  /* grid-template-columns: 1fr 3fr;
+  grid-template-rows: min-content auto;
+  grid-template-areas: "img title"    
+    "img content";
+ */
+  /* option 2 */
+  grid-template:
+    "img title" min-content
+    "img content" auto / 1fr 3fr;
+
+
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 1.5em;
+  grid-column-gap: 1.5em;
+  margin-bottom: 1em;
+}
+
+
+.card-img {
+  grid-area: img;
+
+  max-width: 100%;
+}
+
+.card-title {
+  /* background-color: green; */
+  grid-area: title;
+  margin: 0;
+  font-weight: 300;
+}
+
+.card-content {
+  /* background-color: lightblue; */
+  grid-area: content;
+
+  a {
+    color: rgb(211, 211, 145);
+    font-size: 1.1em;
+  }
+}
